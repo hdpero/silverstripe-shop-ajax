@@ -32,6 +32,7 @@ class ShoppingCartAjax extends Extension
 
             $this->setupRenderContexts($response, $product);
             $response->pushRegion('SideCart', $this->owner);
+            $response->pushRegion('Navigation', $this->owner);
             $response->triggerEvent('cartadd');
             $response->triggerEvent('cartchange', array(
                 'action'    => 'add',
@@ -67,6 +68,7 @@ class ShoppingCartAjax extends Extension
 
             $this->setupRenderContexts($response, $product);
             $response->pushRegion('SideCart', $this->owner);
+            $response->pushRegion('Navigation', $this->owner);
             $response->pushRegion('CartFormAjax', $this->owner, array('Editable' => true));
             $response->triggerEvent('cartremove');
             $response->triggerEvent('cartchange', array(
@@ -107,6 +109,7 @@ class ShoppingCartAjax extends Extension
 
             $this->setupRenderContexts($response, $product);
             $response->pushRegion('SideCart', $this->owner);
+            $response->pushRegion('Navigation', $this->owner);
             $response->pushRegion('CartFormAjax', $this->owner, array('Editable' => true));
             $response->triggerEvent('cartremove');
             $response->triggerEvent('cartchange', array(
@@ -148,6 +151,7 @@ class ShoppingCartAjax extends Extension
 
             $this->setupRenderContexts($response, $product);
             $response->pushRegion('SideCart', $this->owner);
+            $response->pushRegion('Navigation', $this->owner);
             $response->triggerEvent('cartquantity');
             $response->triggerEvent('cartchange', array(
                 'action'    => 'setquantity',
@@ -185,6 +189,7 @@ class ShoppingCartAjax extends Extension
 
             $this->setupRenderContexts($response);
             $response->pushRegion('SideCart', $this->owner);
+            $response->pushRegion('Navigation', $this->owner);
             $response->triggerEvent('cartempty'); // this is triggered any time the cart has no items in it
             $response->triggerEvent('cartchange', array(
                 'action'    => 'clear',
@@ -228,6 +233,7 @@ class ShoppingCartAjax extends Extension
             $this->setupRenderContexts($response, $variation);
             $response->addRenderContext('FORM', $form);
             $response->pushRegion('SideCart', $this->owner);
+            $response->pushRegion('Navigation', $this->owner);
             $response->triggerEvent('cartadd');
             $response->triggerEvent('cartchange', array(
                 'action'    => 'add',
@@ -273,6 +279,7 @@ class ShoppingCartAjax extends Extension
             $this->setupRenderContexts($response, $buyable);
             $response->addRenderContext('FORM', $form);
             $response->pushRegion('SideCart', $this->owner);
+            $response->pushRegion('Navigation', $this->owner);
             $response->triggerEvent('cartadd');
             $response->triggerEvent('cartchange', array(
                 'action'    => 'add',
@@ -319,6 +326,7 @@ class ShoppingCartAjax extends Extension
 
             $response->pushRegion('CartFormAjax', $this->owner, array('Editable' => true));
             $response->pushRegion('SideCart', $this->owner);
+            $response->pushRegion('Navigation', $this->owner);
         }
     }
 
